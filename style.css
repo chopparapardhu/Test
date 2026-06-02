@@ -634,3 +634,205 @@ font-size:22px;
 color:#e5e7eb;
 font-size:12px;
 }
+
+/* ==========================
+   FINAL OVERRIDES
+========================== */
+
+.logo-area{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo-area img{
+width:70px;
+height:70px;
+object-fit:cover;
+border-radius:12px;
+}
+
+.company-name h2{
+margin:0;
+font-size:22px;
+font-weight:700;
+color:#fff;
+}
+
+.company-name span{
+font-size:12px;
+color:#e5e7eb;
+}
+
+/* Hero */
+
+.hero{
+position:relative;
+overflow:hidden;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.15);
+z-index:1;
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+padding-top:140px;
+padding-left:15px;
+padding-right:15px;
+}
+
+.hero-watermark{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+font-size:45px;
+font-weight:800;
+color:rgba(255,255,255,.04);
+pointer-events:none;
+z-index:1;
+white-space:nowrap;
+text-align:center;
+}
+
+.hero h1{
+font-size:48px;
+line-height:1.15;
+font-weight:700;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:18px;
+line-height:1.7;
+}
+
+/* Buttons */
+
+.btn-primary{
+background:linear-gradient(
+135deg,
+#0f7a3d,
+#16a34a
+);
+color:#fff;
+box-shadow:0 10px 25px rgba(15,122,61,.35);
+}
+
+.btn-primary:hover,
+.btn-secondary:hover{
+transform:translateY(-3px);
+}
+
+/* Service Cards */
+
+.service-card{
+border:1px solid rgba(0,0,0,.05);
+}
+
+.service-card:hover{
+transform:translateY(-10px) scale(1.02);
+}
+
+/* Floating Buttons */
+
+.call-float{
+bottom:140px;
+right:15px;
+width:60px;
+height:60px;
+}
+
+.whatsapp-float{
+bottom:70px;
+right:15px;
+width:60px;
+height:60px;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.navbar{
+padding:15px;
+}
+
+.nav-links{
+display:none;
+}
+
+.logo-area img{
+width:55px;
+height:55px;
+}
+
+.company-name h2{
+font-size:16px;
+}
+
+.company-name span{
+font-size:10px;
+}
+
+.call-btn{
+padding:10px 18px;
+font-size:14px;
+}
+
+.hero-content{
+padding-top:130px;
+}
+
+.hero-watermark{
+font-size:30px;
+}
+
+.hero h1{
+font-size:26px;
+line-height:1.2;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:15px;
+line-height:1.6;
+}
+
+.hero-buttons{
+flex-direction:column;
+align-items:center;
+}
+
+.hero-stats{
+grid-template-columns:repeat(2,1fr);
+gap:10px;
+margin-top:25px;
+}
+
+.hero-stats div{
+padding:12px;
+}
+
+.hero-stats h3{
+font-size:22px;
+}
+
+.process-grid{
+grid-template-columns:1fr;
+}
+
+h2{
+font-size:30px;
+}
+
+}
