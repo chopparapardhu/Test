@@ -59,8 +59,9 @@ box-shadow:0 2px 15px rgba(0,0,0,.08);
 }
 
 .logo img{
-height:60px;
+height:80px;
 width:auto;
+border-radius:10px;
 }
 
 .nav-links{
@@ -189,6 +190,25 @@ backdrop-filter:blur(10px);
 
 .hero-stats h3{
 font-size:28px;
+}
+
+.hero{
+background:
+linear-gradient(
+rgba(0,0,0,.55),
+rgba(0,0,0,.55)
+),
+url("./images/hero.jpg");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+
+min-height:100vh;
+
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
 /* ==========================
