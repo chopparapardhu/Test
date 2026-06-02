@@ -1,205 +1,237 @@
-// ===============================
-// Sri Balaji Pest Control Solutions
-// Premium Website Script
-// ===============================
+/* =====================================
+   Sri Balaji Pest Control Solutions
+   Premium Website Script
+===================================== */
 
-// Smooth Scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
+// ===== Sticky Navbar =====
 
-        const target = document.querySelector(
-            this.getAttribute('href')
-        );
+window.addEventListener("scroll", function () {
 
-        if(target){
-            target.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
-});
+const navbar = document.querySelector(".navbar");
 
-// Scroll Reveal Animation
-const observer = new IntersectionObserver(entries => {
+if (window.scrollY > 80) {
 
-    entries.forEach(entry => {
+navbar.style.background = "rgba(255,255,255,0.98)";
+navbar.style.boxShadow = "0 5px 20px rgba(0,0,0,0.1)";
 
-        if(entry.isIntersecting){
-            entry.target.classList.add('show');
-        }
+} else {
 
-    });
+navbar.style.background = "rgba(255,255,255,0.95)";
+navbar.style.boxShadow = "none";
 
-},{
-    threshold:0.15
-});
-
-document.querySelectorAll(
-'section,.service-card,.testimonial-card'
-).forEach(el=>{
-
-    el.classList.add('hidden');
-
-    observer.observe(el);
+}
 
 });
 
-// Back To Top Button
+// ===== Scroll Reveal Animation =====
+
+const observer = new IntersectionObserver(
+
+(entries) => {
+
+entries.forEach((entry) => {
+
+if (entry.isIntersecting) {
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},
+
+{
+threshold: 0.15
+}
+
+);
+
+document
+.querySelectorAll(
+"section,.service-card,.why-card,.testimonial-card,.faq-item,.area-grid div"
+)
+.forEach((el) => {
+
+el.classList.add("hidden");
+
+observer.observe(el);
+
+});
+
+// ===== Counter Animation =====
+
+function animateCounter(counter) {
+
+const target = +counter.getAttribute("data-count");
+
+let count = 0;
+
+const increment = target / 100;
+
+const updateCounter = () => {
+
+if (count < target) {
+
+count += increment;
+
+counter.innerText = Math.ceil(count);
+
+requestAnimationFrame(updateCounter);
+
+} else {
+
+counter.innerText = target;
+
+}
+
+};
+
+updateCounter();
+
+}
+
+const counterObserver = new IntersectionObserver(
+
+(entries) => {
+
+entries.forEach((entry) => {
+
+if (entry.isIntersecting) {
+
+animateCounter(entry.target);
+
+counterObserver.unobserve(entry.target);
+
+}
+
+});
+
+},
+
+{
+threshold: 0.5
+}
+
+);
+
+document.querySelectorAll("[data-count]").forEach((counter) => {
+
+counterObserver.observe(counter);
+
+});
+
+// ===== FAQ Accordion =====
+
+const faqItems = document.querySelectorAll(".faq-item");
+
+faqItems.forEach((item) => {
+
+const question = item.querySelector("h3");
+
+question.style.cursor = "pointer";
+
+question.addEventListener("click", () => {
+
+faqItems.forEach((faq) => {
+
+if (faq !== item) {
+
+faq.classList.remove("active");
+
+}
+
+});
+
+item.classList.toggle("active");
+
+});
+
+});
+
+// ===== Back To Top Button =====
+
 const topBtn = document.createElement("button");
 
 topBtn.innerHTML = "↑";
 
-topBtn.id = "backToTop";
+topBtn.id = "topBtn";
 
 document.body.appendChild(topBtn);
 
 topBtn.style.position = "fixed";
-topBtn.style.bottom = "20px";
-topBtn.style.left = "20px";
+topBtn.style.bottom = "170px";
+topBtn.style.right = "20px";
 topBtn.style.width = "55px";
 topBtn.style.height = "55px";
-topBtn.style.borderRadius = "50%";
 topBtn.style.border = "none";
-topBtn.style.background = "#0f7a3d";
+topBtn.style.borderRadius = "50%";
+topBtn.style.background = "#111827";
 topBtn.style.color = "#fff";
 topBtn.style.fontSize = "22px";
 topBtn.style.cursor = "pointer";
 topBtn.style.display = "none";
 topBtn.style.zIndex = "9999";
+topBtn.style.boxShadow = "0 5px 15px rgba(0,0,0,0.2)";
 
-// Show Button On Scroll
 window.addEventListener("scroll", () => {
 
-    if(window.scrollY > 400){
+if (window.scrollY > 400) {
 
-        topBtn.style.display = "block";
+topBtn.style.display = "block";
 
-    }else{
+} else {
 
-        topBtn.style.display = "none";
-
-    }
-
-});
-
-// Scroll Top
-topBtn.addEventListener("click", () => {
-
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-
-});
-
-// Counter Animation
-function animateCounter(el,target){
-
-    let count = 0;
-
-    const speed = target / 100;
-
-    const timer = setInterval(()=>{
-
-        count += speed;
-
-        if(count >= target){
-
-            count = target;
-
-            clearInterval(timer);
-
-        }
-
-        el.innerText = Math.floor(count);
-
-    },20);
+topBtn.style.display = "none";
 
 }
 
-document.querySelectorAll('[data-count]')
-.forEach(counter=>{
+});
 
-    const counterObserver =
-    new IntersectionObserver(entries=>{
+topBtn.addEventListener("click", () => {
 
-        if(entries[0].isIntersecting){
+window.scrollTo({
 
-            animateCounter(
-                counter,
-                Number(counter.dataset.count)
-            );
-
-            counterObserver.disconnect();
-
-        }
-
-    });
-
-    counterObserver.observe(counter);
+top: 0,
+behavior: "smooth"
 
 });
 
-// FAQ Accordion
-document.querySelectorAll('.faq-question')
-.forEach(question=>{
+});
 
-    question.addEventListener('click',()=>{
+// ===== Smooth Anchor Scroll =====
 
-        question.classList.toggle('active');
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
-        const answer =
-        question.nextElementSibling;
+anchor.addEventListener("click", function (e) {
 
-        if(answer.style.maxHeight){
+e.preventDefault();
 
-            answer.style.maxHeight = null;
+const target = document.querySelector(
+this.getAttribute("href")
+);
 
-        }else{
+if (target) {
 
-            answer.style.maxHeight =
-            answer.scrollHeight + 'px';
+target.scrollIntoView({
 
-        }
-
-    });
+behavior: "smooth"
 
 });
 
-// Navbar Background Change
-window.addEventListener('scroll',()=>{
-
-    const nav =
-    document.querySelector('nav');
-
-    if(!nav) return;
-
-    if(window.scrollY > 50){
-
-        nav.style.background =
-        "rgba(17,24,39,.95)";
-
-        nav.style.backdropFilter =
-        "blur(12px)";
-
-    }else{
-
-        nav.style.background =
-        "transparent";
-
-    }
+}
 
 });
 
-// Current Year In Footer
-const year =
-document.getElementById('year');
+});
 
-if(year){
+// ===== Current Year Auto Footer =====
 
-    year.innerText =
-    new Date().getFullYear();
+const yearSpan = document.getElementById("year");
+
+if (yearSpan) {
+
+yearSpan.textContent = new Date().getFullYear();
 
 }
 
