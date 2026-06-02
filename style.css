@@ -943,11 +943,12 @@ font-size:14px;
 }
 
 .hero-content{
-padding-top:130px;
+padding-top:180px;
 }
 
 .hero-watermark{
-font-size:30px;
+font-size:22px;
+opacity:.5;
 }
 
 .hero h1{
@@ -973,7 +974,10 @@ margin-top:25px;
 }
 
 .hero-stats div{
-padding:12px;
+padding:16px;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,.15);
 }
 
 .hero-stats h3{
@@ -1049,3 +1053,33 @@ font-size:9px;
 }
 
 }
+
+.hero{
+background:
+linear-gradient(
+rgba(0,0,0,.55),
+rgba(0,0,0,.55)
+),
+url("./images/hero.jpg");
+
+background-size:cover;
+background-position:75% center;
+background-repeat:no-repeat;
+
+min-height:100vh;
+
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+@media(max-width:768px){
+
+.hero{
+background-position:75% center;
+min-height:110vh;
+}
+
+}
+
+
