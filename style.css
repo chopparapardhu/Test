@@ -503,3 +503,33 @@ font-size:32px;
 }
 
 }
+
+/* Scroll Animation */
+
+.hidden{
+opacity:0;
+transform:translateY(40px);
+transition:all .8s ease;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* FAQ Accordion */
+
+.faq-item p{
+display:none;
+margin-top:10px;
+}
+
+.faq-item.active p{
+display:block;
+}
+
+/* Top Button Hover */
+
+#topBtn:hover{
+transform:scale(1.1);
+}
