@@ -600,46 +600,37 @@ transform:scale(1.1);
 }
 
 .hero-watermark{
-
 position:absolute;
-
-font-size:70px;
-font-weight:800;
-
-color:rgba(255,255,255,.05);
-
 top:50%;
 left:50%;
-
 transform:translate(-50%,-50%);
-
-white-space:nowrap;
-
+font-size:80px;
+font-weight:800;
+color:rgba(255,255,255,0.05);
 pointer-events:none;
-
+z-index:1;
+white-space:nowrap;
 }
 
-@media(max-width:768px){
-
-.hero-watermark{
-font-size:50px;
+.hero-content{
+position:relative;
+z-index:2;
 }
 
-}
-
-.logo-area{
-display:flex;
-align-items:center;
-gap:12px;
+.logo-area img{
+width:70px;
+height:70px;
+object-fit:cover;
+border-radius:12px;
 }
 
 .company-name h2{
-font-size:22px;
-color:white;
+color:#fff;
 margin:0;
+font-size:22px;
 }
 
 .company-name span{
+color:#e5e7eb;
 font-size:12px;
-color:#ddd;
 }
