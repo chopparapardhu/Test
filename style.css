@@ -264,14 +264,71 @@ color:var(--dark);
 ========================== */
 
 #about{
-background:var(--gray);
+position:relative;
 text-align:center;
+padding:100px 20px;
+
+background:
+linear-gradient(
+rgba(255,255,255,.95),
+rgba(255,255,255,.95)
+),
+url("./images/about-bg.jpg");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+overflow:hidden;
 }
 
 #about p{
 max-width:800px;
 margin:auto;
 font-size:18px;
+}
+
+#about::before{
+
+content:"PEST CONTROL";
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+font-size:120px;
+font-weight:800;
+
+color:rgba(15,122,61,.05);
+
+white-space:nowrap;
+
+pointer-events:none;
+
+}
+
+.about-box{
+
+max-width:900px;
+
+margin:auto;
+
+padding:40px;
+
+background:rgba(255,255,255,.85);
+
+backdrop-filter:blur(15px);
+
+border-radius:25px;
+
+box-shadow:
+0 20px 40px rgba(0,0,0,.08);
+
+position:relative;
+z-index:2;
+
 }
 
 /* ==========================
