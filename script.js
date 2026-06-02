@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", () => {
   topBtn.style.cssText = `
   position:fixed;
   right:20px;
-  bottom:180px;
+  bottom:240px;
   width:55px;
   height:55px;
   border:none;
