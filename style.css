@@ -162,8 +162,30 @@ transition:.3s;
 }
 
 .btn-primary{
-background:var(--primary);
+background:linear-gradient(
+135deg,
+#0f7a3d,
+#16a34a
+);
+
 color:white;
+
+box-shadow:
+0 10px 25px rgba(15,122,61,.35);
+}
+
+.service-card{
+
+border:1px solid rgba(0,0,0,.05);
+
+}
+
+.service-card:hover{
+
+transform:
+translateY(-10px)
+scale(1.02);
+
 }
 
 .btn-secondary{
