@@ -899,14 +899,14 @@ transform:translateY(-10px) scale(1.02);
 /* Floating Buttons */
 
 .call-float{
-bottom:140px;
+bottom:110px;
 right:15px;
 width:60px;
 height:60px;
 }
 
 .whatsapp-float{
-bottom:70px;
+bottom:35px;
 right:15px;
 width:60px;
 height:60px;
@@ -952,9 +952,12 @@ opacity:.5;
 }
 
 .hero h1{
-font-size:26px;
+font-size:24px;
 line-height:1.2;
 margin-bottom:15px;
+max-width:90%;
+margin-left:auto;
+margin-right:auto;
 }
 
 .hero p{
