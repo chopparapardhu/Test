@@ -1085,4 +1085,23 @@ min-height:110vh;
 
 }
 
+.why-us{
+background:
+linear-gradient(
+rgba(0,0,0,.75),
+rgba(0,0,0,.75)
+),
+url("./images/about-bg.jpg");
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+}
+
+.why-card{
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(10px);
+color:#fff;
+border:1px solid rgba(255,255,255,.15);
+}
 
