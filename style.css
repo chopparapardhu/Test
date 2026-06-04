@@ -1105,7 +1105,9 @@ color:#fff;
 border:1px solid rgba(255,255,255,.15);
 }
 
-.process-section{
+/* Premium How We Work Section */
+
+.process{
 background:
 linear-gradient(
 rgba(0,0,0,.75),
@@ -1118,20 +1120,28 @@ background-position:center;
 background-repeat:no-repeat;
 }
 
-.process-section h2{
+.process h2{
 color:#fff;
 }
 
 .process-grid div{
+
 background:rgba(255,255,255,.08);
+
 backdrop-filter:blur(10px);
+
 color:#fff;
+
 border:1px solid rgba(255,255,255,.15);
 
 transition:.3s;
+
 }
 
 .process-grid div:hover{
+
 transform:translateY(-8px);
+
 background:rgba(255,255,255,.12);
+
 }
